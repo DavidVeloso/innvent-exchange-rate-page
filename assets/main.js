@@ -23,11 +23,13 @@ function updateChart (from) {
       var categories = [];
       var seriesValues = [];
       var data = response.data;
-
+    
       for (var i = 0; i < data.length; i++) {
         categories.push(data[i].date);
         seriesValues.push(data[i].value);
       };
+     
+      var minValue = Math.min.apply(Math,seriesValues);
 
       Highcharts.chart('container', {
           chart: {type: 'areaspline'},
@@ -46,6 +48,7 @@ function updateChart (from) {
             categories: categories
           },
           yAxis: {
+            min: minValue,
             title: {
               text: 'R$'
             }
