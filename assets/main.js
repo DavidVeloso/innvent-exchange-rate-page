@@ -18,7 +18,7 @@ jQuery('#peso').on('click', function(e) {
 
 function updateChart (from) {
   jQuery(function () {
-    jQuery.getJSON('http://innvent.davidveloso.com/api/exchangerate?to=BRL&from='+from, function (response) {
+    jQuery.getJSON('http://apis.davidveloso.com/innventapi/exchangerate?to=BRL&from='+from, function (response) {
       
       var categories = [];
       var seriesValues = [];
